@@ -1,7 +1,7 @@
 export default tempData = [
     {
         name: 'Matemática',
-        color: '#4EBDFF',
+        color: '#006EE9',
         tarefas: [
             {
                 title: 'Estudar Matemática',
@@ -23,7 +23,7 @@ export default tempData = [
     },
     {
         name: 'Português',
-        color: '#FFAC4E',
+        color: '#00D7E3',
         tarefas: [
             {
                 title: 'Estudar Matemática',
