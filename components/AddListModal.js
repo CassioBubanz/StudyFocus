@@ -12,12 +12,12 @@ export default class AddListModal extends Component {
         color: this.backgroundColors[0]
     }
 
-    createTodo = () => {
+    createMateria = () => {
         const { name, color } = this.state
         tempData.push({
             name,
             color,
-            tarefas: []
+            materia: []
         })
 
         this.setState({ name: '' })
@@ -57,7 +57,7 @@ export default class AddListModal extends Component {
 
             <TouchableOpacity
                 style={[styles.create, {backgroundColor: this.state.color}]}
-                onPress={this.createTodo}
+                onPress={this.createMateria}
             >
                 <Text style={{color: colors.white, fontWeight: '600'}}>Adicionar</Text>
             </TouchableOpacity>

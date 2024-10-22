@@ -3,27 +3,30 @@ import { StyleSheet, Text, TouchableOpacity, View, FlatList, Modal } from 'react
 import { AntDesign } from '@expo/vector-icons';
 import colors from './Colors';
 import tempData from './tempData';
-import TodoList from './components/TodoList';
+import MateriaList from './components/MateriaList';
 import AddListModal from './components/AddListModal';
 
 export default class App extends React.Component {
   state = {
-    addTodoVisible: false
+    addMateriaVisible: false
   }
 
-  toggleAddTodoModal = () => {
-    this.setState({ addTodoVisible: !this.state.addTodoVisible });
+  toggleAddMateriaModal = () => {
+    this.setState({ addMateriaVisible: !this.state.addMateriaVisible });
   }
   
+  renderList = list => {
+    return <MateriaList list={list} />
+  }
   render() {
     return (
       <View style={styles.container}>
         <Modal
           animationType='slide'
-          visible={this.state.addTodoVisible}
-          onRequestClose={() => this.toggleAddTodoModal()}
+          visible={this.state.addMateriaVisible}
+          onRequestClose={() => this.toggleAddMateriaModal()}
         >
-          <AddListModal closeModal={() => this.toggleAddTodoModal()}/>
+          <AddListModal closeModal={() => this.toggleAddMateriaModal()}/>
         </Modal>
         <View style={{flexDirection: 'row'}}>
           <View style={styles.divider}/>
@@ -34,7 +37,7 @@ export default class App extends React.Component {
         </View>
 
         <View style={{marginVertical: 48, alignItems: 'center', justifyContent: 'center'}}>
-          <TouchableOpacity style={styles.addList} onPress={() => this.toggleAddTodoModal()}>
+          <TouchableOpacity style={styles.addList} onPress={() => this.toggleAddMateriaModal()}>
             <AntDesign name="plus" size={16} color={colors.blue} />
           </TouchableOpacity>
 
@@ -47,7 +50,7 @@ export default class App extends React.Component {
             keyExtractor={item => item.name}
             horizontal={true}
             showsHorizontalScrollIndicator={false}
-            renderItem={({ item }) => <TodoList list={item} />}
+            renderItem={({ item }) => this.renderList(item)}
           />
         </View>
       </View>

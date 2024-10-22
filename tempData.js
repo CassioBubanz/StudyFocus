@@ -2,7 +2,7 @@ export default tempData = [
     {
         name: 'Matemática',
         color: '#006EE9',
-        tarefas: [
+        materia: [
             {
                 title: 'Estudar Matemática',
                 completed: true
@@ -24,7 +24,7 @@ export default tempData = [
     {
         name: 'Português',
         color: '#00D7E3',
-        tarefas: [
+        materia: [
             {
                 title: 'Estudar Matemática',
                 completed: true
@@ -46,7 +46,7 @@ export default tempData = [
     {
         name: 'Geografia',
         color: '#FF4E50',
-        tarefas: [
+        materia: [
             {
                 title: 'Estudar Matemática',
                 completed: true
