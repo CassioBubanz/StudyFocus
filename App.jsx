@@ -5,6 +5,8 @@ import colors from './Colors';
 import tempData from './tempData';
 import TodoList from './components/TodoList';
 import AddListModal from './components/AddListModal';
+import { Login } from './components/Login';
+import { Register } from './components/Register';
 
 
 export default class App extends React.Component {
@@ -53,6 +55,7 @@ export default class App extends React.Component {
         </View>
         
       </View>
+      
     );
   }
 }
